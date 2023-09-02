@@ -1,0 +1,29 @@
+{
+    "manifest_version":3,
+    "name":"Wordy Wise",
+    "description":"Wordy Wise helps you to check the meaning of words on any webpage",
+    "version":"1.0.0",
+    "permissions":["activeTab","storage","tabs","scripting","contextMenus"],
+    "host_permissions":["*://*/*"],
+    "icons":{
+        "128":"icon128.png",
+        "48":"icon48.png",
+        "16":"icon16.png"
+    },
+    "action":{
+        "default_popup":"index.htm",
+        "default_title":"Wordy Wise"
+    },
+    "background":{
+        "service_worker":"background.js"
+    },
+    "content_scripts":[
+        {
+            "matches":[
+                "<all_urls>"
+            ],
+            "js":["content.js"]
+        }
+    ]
+} 
+
